@@ -33,6 +33,7 @@ jobs:
             - ./vendor
 
 
-      - run: php artisan migrate:refresh --seed
+      - run: php artisan migrate
+      - run: php artisan db:seed
 
       - run: ./vendor/bin/phpunit
