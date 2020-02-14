@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.4-cli
+        environment:
+          APP_ENV: testing
+          DB_DATABASE: recognizer
+          DB_USERNAME: root
+
+      - image: circleci/mariadb:10.4
+        environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: recognizer
+
+    steps:
+      - checkout
+
+      - run: sudo apt update
+      - run: sudo docker-php-ext-install pdo_mysql zip
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "composer.json" }}
+            - v1-dependencies-
+
+      - run: composer install -n --prefer-dist
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "composer.json" }}
+          paths:
+            - ./vendor
+
+
+      - run: php artisan migrate
+      - run: php artisan db:seed
+
+      - run: ./vendor/bin/php-cs-fixer fix --dry-run
+      - run: ./vendor/bin/phpstan analyse
+      - run: ./vendor/bin/phpunit
