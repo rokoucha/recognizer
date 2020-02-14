@@ -137,7 +137,7 @@ class ChecklistsTableSeeder extends Seeder
             ],
         ];
 
-        foreach($checklists as $checklist) {
+        foreach ($checklists as $checklist) {
             Checklist::create($checklist);
         }
     }

@@ -27,7 +27,7 @@ class AttachmentsTableSeeder extends Seeder
             ],
         ];
 
-        foreach($attachments as $attachment) {
+        foreach ($attachments as $attachment) {
             Attachment::create($attachment);
         }
     }
