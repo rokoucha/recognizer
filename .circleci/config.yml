@@ -7,14 +7,12 @@ jobs:
           APP_ENV: testing
           APP_KEY: base64:SLHDcJil3puYRrkBYgU+vlK7+YaVtVo3oU9Lh8JbQj0=
           DB_DATABASE: recognizer
-          DB_PASSWORD: ''
           DB_USERNAME: root
 
       - image: circleci/mariadb:10.4
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
           MYSQL_DATABASE: recognizer
-          MYSQL_ROOT_PASSWORD: ''
 
     steps:
       - checkout
