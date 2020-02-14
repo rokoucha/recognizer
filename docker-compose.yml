@@ -1,5 +1,13 @@
 version: "3"
 services:
+  recognizer:
+    build:
+      context: ./
+    image: rokoucha/recognizer
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/usr/src/recognizer
   mysql:
     image: mariadb:10.4
     ports:
