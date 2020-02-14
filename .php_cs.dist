@@ -1,0 +1,12 @@
+<?php
+
+return PhpCsFixer\Config::create()
+    ->setFinder(PhpCsFixer\Finder::create()
+        ->exclude([
+            'bootstrap/cache',
+            'storage',
+            'vendor',
+        ])
+        ->in(__DIR__)
+    )
+    ;
