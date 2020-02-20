@@ -61,53 +61,6 @@ class ChecklistsTableSeeder extends Seeder
                 'description' => 'checklist',
             ],
             [
-                'name' => 'Before creating PR',
-                'user_id' => 1,
-                'checks' => json_encode([
-                    'ordered' => true,
-                    'children' => [
-                        [
-                            'title' => 'Checked which commits are included',
-                            'checked' => true,
-                            'ordered' => false,
-                            'children' => [],
-                        ],
-                        [
-                            'title' => 'Comments are written ',
-                            'checked' => true,
-                            'ordered' => false,
-                            'children' => [
-                                [
-                                    'title' => 'Issues are linked',
-                                    'checked' => true,
-                                    'ordered' => false,
-                                    'children' => [],
-                                ],
-                                [
-                                    'title' => 'Purpose are written',
-                                    'checked' => true,
-                                    'ordered' => false,
-                                    'children' => [],
-                                ],
-                            ],
-                        ],
-                        [
-                            'title' => 'Projects are set',
-                            'checked' => false,
-                            'ordered' => false,
-                            'children' => [],
-                        ],
-                        [
-                            'title' => 'Milestone are set',
-                            'checked' => false,
-                            'ordered' => false,
-                            'children' => [],
-                        ],
-                    ],
-                ]),
-                'description' => 'checklist',
-            ],
-            [
                 'name' => 'Tasks',
                 'user_id' => 1,
                 'checks' => json_encode([
