@@ -15,54 +15,7 @@ class ChecklistsTableSeeder extends Seeder
         $checklists = [
             [
                 'name' => 'Before creating PR',
-                'user' => 1,
-                'checks' => json_encode([
-                    'ordered' => true,
-                    'children' => [
-                        [
-                            'title' => 'Checked which commits are included',
-                            'checked' => true,
-                            'ordered' => false,
-                            'children' => [],
-                        ],
-                        [
-                            'title' => 'Comments are written ',
-                            'checked' => true,
-                            'ordered' => false,
-                            'children' => [
-                                [
-                                    'title' => 'Issues are linked',
-                                    'checked' => true,
-                                    'ordered' => false,
-                                    'children' => [],
-                                ],
-                                [
-                                    'title' => 'Purpose are written',
-                                    'checked' => true,
-                                    'ordered' => false,
-                                    'children' => [],
-                                ],
-                            ],
-                        ],
-                        [
-                            'title' => 'Projects are set',
-                            'checked' => false,
-                            'ordered' => false,
-                            'children' => [],
-                        ],
-                        [
-                            'title' => 'Milestone are set',
-                            'checked' => false,
-                            'ordered' => false,
-                            'children' => [],
-                        ],
-                    ],
-                ]),
-                'description' => 'checklist',
-                ],
-                            [
-                'name' => 'Before creating PR',
-                'user' => 1,
+                'user_id' => 1,
                 'checks' => json_encode([
                     'ordered' => true,
                     'children' => [
@@ -109,7 +62,7 @@ class ChecklistsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Tasks',
-                'user' => 1,
+                'user_id' => 1,
                 'checks' => json_encode([
                     'ordered' => false,
                     'children' => [
