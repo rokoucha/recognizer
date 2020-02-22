@@ -10,5 +10,5 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', fn() => view('index'));
+Route::get('/', fn () => view('index'));
 Route::resource('checklist', 'ChecklistController');
