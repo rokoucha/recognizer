@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Checklist;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ChecklistController extends Controller
 {
     public function index()
     {
-        $checklists = Checklist::all();
+        $checklists = Checklist::simplePaginate(10);
 
         return view('checklist/index', compact('checklists'));
     }
@@ -26,7 +27,9 @@ class ChecklistController extends Controller
     {
         $checklist = Checklist::findOrFail($id);
 
-        return view('checklist/edit', compact('checklist'));
+        $auth = Auth::user();
+
+        return view('checklist/edit', compact('checklist', 'auth'));
     }
 
     public function update(Request $request, $id)
@@ -60,6 +63,7 @@ class ChecklistController extends Controller
         $checklist->checks = $request->checks;
         $checklist->description = $request->description;
         $checklist->name = $request->name;
+        $checklist->user_id = $request->user()->id;
         $checklist->save();
 
         return redirect("/checklist");
