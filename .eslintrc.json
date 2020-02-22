@@ -1,0 +1,23 @@
+
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:vue/strongly-recommended",
+    "prettier/vue"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "prettier/prettier": "error"
+  },
+  "globals": {
+    "Vue": true
+  }
+}
