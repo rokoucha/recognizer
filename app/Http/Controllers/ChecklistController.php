@@ -34,16 +34,16 @@ class ChecklistController extends Controller
 
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
+        $request->validate([
             'name' => ['required', 'max:255'],
             'checks' => ['required'],
             'description' => ['required'],
         ]);
 
         $checklist = Checklist::findOrFail($id);
-        $checklist->checks = $validated->checks;
-        $checklist->description = $validated->description;
-        $checklist->name = $validated->name;
+        $checklist->checks = $request->checks;
+        $checklist->description = $request->description;
+        $checklist->name = $request->name;
         $checklist->save();
 
         return redirect("/checklist");
@@ -65,16 +65,16 @@ class ChecklistController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'name' => ['required', 'max:255'],
             'checks' => ['required'],
             'description' => ['required'],
         ]);
 
         $checklist = new Checklist();
-        $checklist->checks = $validated->checks;
-        $checklist->description = $validated->description;
-        $checklist->name = $validated->name;
+        $checklist->checks = $request->checks;
+        $checklist->description = $request->description;
+        $checklist->name = $request->name;
         $checklist->user_id = $request->user()->id;
         $checklist->save();
 
