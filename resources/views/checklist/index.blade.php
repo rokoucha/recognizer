@@ -1,4 +1,4 @@
-@extends('checklist/layout')
+@extends('layout')
 @section('content')
 <div class="p-2 w-full">
     <div class="w-full text-center mb-2 text-xl text-teal-300">
