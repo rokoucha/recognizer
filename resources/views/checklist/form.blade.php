@@ -20,6 +20,7 @@
         <div class="md:max-w-full md:flex border border-solid border-gray-300 bg-gray-900">
             <textarea type="text" name="description" placeholder="Description" class="w-full my-2 mx-2 bg-gray-900 text-gray-300">{{ $checklist->description }}</textarea>
         </div>
+        <Attachments checklist="{{ $checklist->id }}" data="{{ json_encode($checklist->attachments) }}"></Attachments>
         <Checklist-Editor data="{{ $checklist->checks }}"></Checklist-Editor>
         @if($mode === 'create')
         <button type="submit" formaction="/checklist" name="_method" value="post" class="w-full h-auto p-2 bg-teal-300 cursor-pointer font-bold text-xl text-black">

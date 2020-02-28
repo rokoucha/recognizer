@@ -20,6 +20,21 @@
             {{ $checklist->description }}
         </div>
     </div>
+    <div class="my-2 border p-2">
+        <div class="flex justify-center">
+            @foreach ($checklist->attachments as $attachment)
+            <div class="flex-col mx-2 mb-2 w-1/3">
+                <a href="{{ $attachment->url }}" target="_blank">
+                    <img
+                        class="flex object-scale-down mx-auto mb-1 cursor-pointer"
+                        alt="{{ $attachment->name }}"
+                        src="{{ $attachment->url }}"
+                    />
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
     <Checklist data="{{ $checklist->checks }}"></Checklist>
 </div>
 @endsection
