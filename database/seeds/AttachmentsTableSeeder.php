@@ -14,16 +14,18 @@ class AttachmentsTableSeeder extends Seeder
     {
         $attachments = [
             [
-                'name' => 'pr.png',
+                'name' => 'checklist.png',
                 'user_id' => 1,
                 'checklist_id' => 1,
-                'path' => '/upload/pr.png'
+                'path' => 'public/attachments/checklist.png',
+                'url' => '/images/checklist.png',
             ],
             [
-                'name' => 'good.png',
+                'name' => 'editor.png',
                 'user_id' => 1,
                 'checklist_id' => 1,
-                'path' => '/upload/good-pr.png'
+                'path' => 'public/attachments/checklist.png',
+                'url' => '/images/editor.png',
             ],
         ];
 
