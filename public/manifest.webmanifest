@@ -1,0 +1,15 @@
+{
+    "background_color": "#fff",
+    "description": "Support your recognition.",
+    "display": "standalone",
+    "icons": [
+        {
+            "sizes": "800x800",
+            "src": "/images/logo.png",
+            "type": "image/png"
+        }
+    ],
+    "name": "Recognizer",
+    "short_name": "Recognizer",
+    "start_url": "."
+}
