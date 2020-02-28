@@ -10,5 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes();
 Route::get('/', fn () => view('index'));
 Route::resource('checklist', 'ChecklistController');
