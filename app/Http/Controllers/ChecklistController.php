@@ -36,8 +36,8 @@ class ChecklistController extends Controller
     {
         $request->validate([
             'name' => ['required', 'max:255'],
-            'checks' => ['required'],
-            'description' => ['required'],
+            'checks' => ['required', 'json'],
+            'description' => ['required', 'string'],
         ]);
 
         $checklist = Checklist::findOrFail($id);
@@ -67,8 +67,8 @@ class ChecklistController extends Controller
     {
         $request->validate([
             'name' => ['required', 'max:255'],
-            'checks' => ['required'],
-            'description' => ['required'],
+            'checks' => ['required', 'json'],
+            'description' => ['required', 'string'],
         ]);
 
         $checklist = new Checklist();
