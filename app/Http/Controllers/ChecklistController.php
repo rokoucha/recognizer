@@ -24,10 +24,8 @@ class ChecklistController extends Controller
     public function show($id)
     {
         $checklist = Checklist::findOrFail($id);
-        $id = Auth::id();
 
-
-        return view('checklist/show', compact('checklist', 'id'));
+        return view('checklist/show', compact('checklist'));
     }
 
     public function edit($id)
