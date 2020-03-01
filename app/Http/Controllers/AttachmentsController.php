@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Storage;
 
 class AttachmentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['show']]);
+    }
+
     public function show($id)
     {
         $attachment = Attachment::findOrFail($id);
@@ -20,6 +25,8 @@ class AttachmentsController extends Controller
     public function destroy($id)
     {
         $attachment = Attachment::findOrFail($id);
+
+        $this->authorize('edit', $checklist);
 
         Storage::delete($attachment->path);
 
