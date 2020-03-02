@@ -26,7 +26,7 @@ class AttachmentsController extends Controller
     {
         $attachment = Attachment::findOrFail($id);
 
-        $this->authorize('edit', $checklist);
+        $this->authorize('edit', $attachment);
 
         Storage::delete($attachment->path);
 
