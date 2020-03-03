@@ -13,4 +13,11 @@
 
 Auth::routes();
 Route::get('/', fn () => view('index'));
+
 Route::resource('checklist', 'ChecklistController');
+
+Route::prefix('api/attachments')->group(function () {
+    Route::post('/', 'AttachmentsController@store');
+    Route::get('/{id}', 'AttachmentsController@show');
+    Route::delete('/{id}', 'AttachmentsController@destroy');
+});
