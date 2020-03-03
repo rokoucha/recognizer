@@ -26,6 +26,7 @@
             <span class="block" role="alert">{{ $message }}</span>
             @enderror
         </div>
+        <Attachments checklist="{{ $checklist->id }}" data="{{ json_encode($checklist->attachments) }}"></Attachments>
         <Checklist-Editor data="{{ $checklist->checks }}"></Checklist-Editor>
         @if($mode === 'create')
         <button type="submit" formaction="/checklist" name="_method" value="post" class="w-full h-auto p-2 bg-teal-300 cursor-pointer font-bold text-xl text-black">

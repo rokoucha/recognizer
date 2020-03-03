@@ -15,6 +15,7 @@ window.addEventListener('load', () => {
 
 window.Vue = require('vue')
 
+Vue.component('Attachments', require('./components/Attachments.vue').default)
 Vue.component('Checklist', require('./components/Checklist.vue').default)
 Vue.component(
   'ChecklistEditor',

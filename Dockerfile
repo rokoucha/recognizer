@@ -25,6 +25,8 @@ WORKDIR /usr/src/recognizer
 
 RUN composer install
 
+RUN php artisan storage:link
+
 RUN yarn install
 RUN yarn run dev
 
