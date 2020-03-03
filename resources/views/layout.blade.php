@@ -20,9 +20,12 @@
                     <ul class="flex justify-end">
                         @auth
                         <li class="px-2">
-                            <a href="/logout" class="py-2">
-                                Logout
-                            </a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit">
+                                    Logout
+                                </button>
+                            </form>
                         </li>
                         @endauth
                         @guest

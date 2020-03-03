@@ -1,4 +1,4 @@
-@extends('checklist/layout')
+@extends('layout')
 @section('content')
 <div class="p-2 w-full">
     <div class="w-full text-center mb-2 text-xl text-teal-300">
@@ -11,9 +11,13 @@
         <div class="px-4 my-auto">
             ✍ {{ $checklist->user->name }}
         </div>
+        @auth
+        @can('edit', $checklist)
         <a href="/checklist/{{ $checklist->id }}/edit" class="mx-4 px-1 bg-gray-700 cursor-pointer text-gray-300">
             📄 Edit
         </a>
+        @endcan
+        @endauth
     </div>
     <div class="md:max-w-full md:flex border border-solid border-gray-300">
         <div class="mb-4 mt-2 mx-2 break-words">

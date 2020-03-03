@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Attachment;
+use App\Checklist;
 use App\Policies\AttachmentPolicy;
+use App\Policies\ChecklistPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -17,6 +19,7 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
         Attachment::class => AttachmentPolicy::class,
+        Checklist::class => ChecklistPolicy::class,
     ];
 
     /**
