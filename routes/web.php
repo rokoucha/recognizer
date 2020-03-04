@@ -23,6 +23,6 @@ Route::prefix('api')->group(function () {
         Route::delete('/{id}', 'AttachmentsController@destroy');
     });
     Route::prefix('checklists')->group(function() {
-        Route::get('/', 'Api/ChecklistsController@index');
+        Route::get('/', 'Api\ChecklistsController@index');
     });
 });
