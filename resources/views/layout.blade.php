@@ -12,12 +12,17 @@
         <div id="app" class="min-h-screen w-full flex flex-col text-gray-300">
             <div class="flex bg-gray-800">
                 <div class="flex mx-auto container max-w-screen-md p-4">
-                    <div class="flex-1 justify-start">
+                    <div class="flex-1 justify-start my-auto">
                         <a href="/checklist" class="py-2 font-bold text-teal-300">
                             Recognizer
                         </a>
                     </div>
-                    <ul class="flex justify-end">
+                    <div class="flex justify-center my-auto">
+                        @auth
+                        <Incremental-Search-Box></Incremental-Search-Box>
+                        @endauth
+                    </div>
+                    <ul class="flex justify-end my-auto">
                         @auth
                         <li class="px-2">
                             <form action="{{ route('logout') }}" method="POST">
