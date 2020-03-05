@@ -11,7 +11,9 @@ class ChecklistsController extends Controller
     public function index(request $request)
     {
         $name = $request->input('name');
-        if (empty($name)) return [];
+        if (empty($name)) {
+            return [];
+        }
 
         return Checklist::select('id', 'name')
             ->where('name', 'LIKE', "%$name%")
