@@ -17,6 +17,17 @@
                             Recognizer
                         </a>
                     </div>
+                    <div class="flex justify-center px-2">
+                        @if(app()->getLocale() === 'ja')
+                            <a href="{{ route('locale', ['key' => 'en']) }}">
+                                🇬🇧 English
+                            </a>
+                        @else
+                            <a href="{{ route('locale', ['key' => 'ja']) }}">
+                                🇯🇵 日本語
+                            </a>
+                        @endif
+                    </div>
                     <ul class="flex justify-end">
                         @auth
                         <li class="px-2">
