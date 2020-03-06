@@ -16,9 +16,9 @@
         <button
           type="button"
           @click="destroy(attachment.id)"
-          class="flex mx-auto px-2 bg-gray-700 cursor-pointer text-gray-300"
+          class="flex m-auto px-2 bg-gray-700 cursor-pointer text-gray-300"
         >
-          🗑 Delete
+          🗑 {{ deleteText }}
         </button>
       </div>
     </div>
@@ -32,9 +32,9 @@
       <button
         type="button"
         @click="upload"
-        class="flex px-2 bg-gray-700 cursor-pointer text-gray-300"
+        class="flex m-auto px-2 bg-gray-700 cursor-pointer text-gray-300"
       >
-        🖼 Upload
+        🖼 {{ uploadText }}
       </button>
     </div>
   </div>
@@ -49,6 +49,16 @@ export default {
     },
     data: {
       required: true,
+      type: String,
+    },
+    deleteText: {
+      default: 'Delete',
+      required: false,
+      type: String,
+    },
+    uploadText: {
+      default: 'Upload',
+      required: false,
       type: String,
     },
   },

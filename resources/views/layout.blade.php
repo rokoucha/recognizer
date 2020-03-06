@@ -23,7 +23,7 @@
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit">
-                                    Logout
+                                    {{ __('messages.Logout') }}
                                 </button>
                             </form>
                         </li>
@@ -31,12 +31,12 @@
                         @guest
                         <li class="px-2">
                             <a href="/login" class="py-2">
-                                Login
+                                {{ __('messages.Login') }}
                             </a>
                         </li>
                         <li class="px-2">
                             <a href="/register" class="py-2">
-                                Register
+                                {{ __('messages.Register') }}
                             </a>
                         </li>
                         @endguest

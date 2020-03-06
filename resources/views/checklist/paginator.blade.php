@@ -3,12 +3,12 @@
         <ul class="flex justify-between">
             @if ($paginator->onFirstPage())
             <li class="inline-block px-1 py-1 bg-teal-700 text-center text-bold text-black">
-                <span>@lang('pagination.previous')</span>
+                <span>{{ __('messages.pagination.previous') }}</span>
             </li>
             @else
             <li class="inline-block px-1 py-1 bg-teal-300 text-center text-bold text-black">
                 <a href="{{ $paginator->previousPageUrl() }}" rel="prev">
-                    @lang('pagination.previous')
+                    {{ __('messages.pagination.previous') }}
                 </a>
             </li>
             @endif
@@ -16,13 +16,13 @@
             @if ($paginator->hasMorePages())
             <li class="inline-block px-1 py-1 bg-teal-300 text-center text-bold text-black">
                 <a href="{{ $paginator->nextPageUrl() }}" rel="next">
-                    @lang('pagination.next')
+                    {{ __('messages.pagination.next') }}
                 </a>
             </li>
             @else
             <li class="inline-block px-1 py-1 bg-teal-700 text-center text-bold text-black">
                 <span>
-                    @lang('pagination.next')
+                    {{ __('messages.pagination.next') }}
                 </span>
             </li>
             @endif
