@@ -20,7 +20,9 @@ Route::middleware('locale')->group(function () {
 
 Route::get('/locale/{key}', function ($language) {
     return back()->cookie(
-        'locale', $language, 60*60*24*365
+        'locale',
+        $language,
+        60*60*24*365
     );
 })->name('locale');
 
