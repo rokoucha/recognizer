@@ -16,7 +16,7 @@
                 ✍ {{ $checklist->user->name }}
             </div>
             <button type="submit" onclick="return confirm('Are you sure you want to delete checklist?')" formaction="/checklist/{{ $checklist->id }}" name="_method" value="delete" class="px-2 bg-gray-700 cursor-pointer text-gray-300">
-                🗑 {{ __('messages.Delete') }}
+                🗑 {{ __('messages.delete') }}
             </button>
         </div>
         @endif
@@ -29,17 +29,17 @@
         <Attachments
             checklist="{{ $checklist->id }}"
             data="{{ json_encode($checklist->attachments) }}"
-            delete-Text="{{ __('messages.Delete') }}"
-            upload-Text="{{ __('messages.Upload') }}"
+            delete-Text="{{ __('messages.delete') }}"
+            upload-Text="{{ __('messages.upload') }}"
         ></Attachments>
         <Checklist-Editor data="{{ $checklist->checks }}"></Checklist-Editor>
         @if($mode === 'create')
         <button type="submit" formaction="/checklist" name="_method" value="post" class="w-full h-auto p-2 bg-teal-300 cursor-pointer font-bold text-xl text-black">
-            {{ __('messages.Create') }}
+            {{ __('messages.create') }}
         </button>
         @elseif($mode === 'edit')
         <button type="submit" formaction="/checklist/{{ $checklist->id }}" name="_method" value="put" class="w-full h-auto p-2 bg-teal-300 cursor-pointer font-bold text-xl text-black">
-            {{ __('messages.Save') }}
+            {{ __('messages.save') }}
         </button>
         @endif
     </form>

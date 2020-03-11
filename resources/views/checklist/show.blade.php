@@ -14,7 +14,7 @@
         @auth
         @can('edit', $checklist)
         <a href="/checklist/{{ $checklist->id }}/edit" class="mx-4 px-1 bg-gray-700 cursor-pointer text-gray-300">
-            📄 {{ __('messages.Edit') }}
+            📄 {{ __('messages.edit') }}
         </a>
         @endcan
         @endauth
@@ -39,6 +39,6 @@
             @endforeach
         </div>
     </div>
-    <Checklist complete-Text="{{ __('messages.Complete!') }}" data="{{ $checklist->checks }}" exit-Text="{{ __('messages.Exit') }}"></Checklist>
+    <Checklist complete-Text="{{ __('messages.complete') }}" data="{{ $checklist->checks }}" exit-Text="{{ __('messages.exit') }}"></Checklist>
 </div>
 @endsection

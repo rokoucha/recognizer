@@ -34,7 +34,7 @@
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit">
-                                    {{ __('messages.Logout') }}
+                                    {{ __('messages.logout') }}
                                 </button>
                             </form>
                         </li>
@@ -42,12 +42,12 @@
                         @guest
                         <li class="px-2">
                             <a href="/login" class="py-2">
-                                {{ __('messages.Login') }}
+                                {{ __('messages.login') }}
                             </a>
                         </li>
                         <li class="px-2">
                             <a href="/register" class="py-2">
-                                {{ __('messages.Register') }}
+                                {{ __('messages.register') }}
                             </a>
                         </li>
                         @endguest
