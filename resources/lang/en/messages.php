@@ -32,5 +32,5 @@ return [
     'this_application_will_support_Pointing_and_calling_with_a_checklist' => 'This application will support "Pointing and calling" with a checklist.',
     'upload' => 'Upload',
     'verify_your_email_address' => 'Verify Your Email Address',
-    'view_hecklists' => 'View Checklists',
+    'view_checklists' => 'View Checklists',
 ];

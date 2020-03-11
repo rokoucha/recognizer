@@ -32,5 +32,5 @@ return [
     'this_application_will_support_Pointing_and_calling_with_a_checklist' => 'このアプリケーションはチェックリストで「指差喚呼」をサポートします。',
     'upload' => 'アップロード',
     'verify_your_email_address' => 'メールアドレスを認証',
-    'view_hecklists' => 'チェックリストを見る',
+    'view_checklists' => 'チェックリストを見る',
 ];
