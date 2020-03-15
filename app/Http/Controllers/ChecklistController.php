@@ -5,13 +5,12 @@ namespace App\Http\Controllers;
 use App\Checklist;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ChecklistController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index','show']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
     public function index()
