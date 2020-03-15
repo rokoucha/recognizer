@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class ChecklistsController extends Controller
 {
+    private $searchLimit = 10;
+
     public function index(request $request)
     {
         $name = $request->input('name');
@@ -17,6 +19,6 @@ class ChecklistsController extends Controller
 
         return Checklist::select('id', 'name')
             ->where('name', 'LIKE', "%$name%")
-            ->limit(10)->get();
+            ->limit($this->searchLimit)->get();
     }
 }
