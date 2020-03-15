@@ -22,13 +22,24 @@
                         <Incremental-Search-Box></Incremental-Search-Box>
                         @endauth
                     </div>
+                    <div class="flex justify-center px-2">
+                        @if(app()->getLocale() === 'ja')
+                            <a href="{{ route('locale', ['key' => 'en']) }}">
+                                🇬🇧 English
+                            </a>
+                        @else
+                            <a href="{{ route('locale', ['key' => 'ja']) }}">
+                                🇯🇵 日本語
+                            </a>
+                        @endif
+                    </div>
                     <ul class="flex justify-end my-auto">
                         @auth
                         <li class="px-2">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <button type="submit">
-                                    Logout
+                                    {{ __('messages.logout') }}
                                 </button>
                             </form>
                         </li>
@@ -36,12 +47,12 @@
                         @guest
                         <li class="px-2">
                             <a href="/login" class="py-2">
-                                Login
+                                {{ __('messages.login') }}
                             </a>
                         </li>
                         <li class="px-2">
                             <a href="/register" class="py-2">
-                                Register
+                                {{ __('messages.register') }}
                             </a>
                         </li>
                         @endguest

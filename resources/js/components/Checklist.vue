@@ -22,7 +22,7 @@
         }"
       >
         <div class="mb-4 mt-2 ml-2 mr-2 font-bold text-xl text-black">
-          {{ isAllChecked() ? 'Complete!' : 'Exit' }}
+          {{ isAllChecked() ? completeText : exitText }}
         </div>
       </div>
     </a>
@@ -38,8 +38,18 @@ export default {
     Checks,
   },
   props: {
+    completeText: {
+      default: 'Complete!',
+      required: false,
+      type: String,
+    },
     data: {
       required: true,
+      type: String,
+    },
+    exitText: {
+      default: 'Exit',
+      required: false,
       type: String,
     },
   },

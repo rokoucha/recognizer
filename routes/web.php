@@ -12,9 +12,19 @@
 */
 
 Auth::routes();
-Route::get('/', fn () => view('index'));
 
-Route::resource('checklist', 'ChecklistController');
+Route::middleware('locale')->group(function () {
+    Route::get('/', fn () => view('index'));
+    Route::resource('checklist', 'ChecklistController');
+});
+
+Route::get('/locale/{key}', function ($language) {
+    return back()->cookie(
+        'locale',
+        $language,
+        60*60*24*365
+    );
+})->name('locale');
 
 Route::prefix('api')->group(function () {
     Route::prefix('attachments')->group(function () {
