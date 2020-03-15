@@ -23,6 +23,10 @@ Vue.component(
 )
 Vue.component('Checks', require('./components/Checks.vue').default)
 Vue.component('ChecksEditor', require('./components/ChecksEditor.vue').default)
+Vue.component(
+  'IncrementalSearchBox',
+  require('./components/IncrementalSearchBox.vue').default,
+)
 
 new Vue({
   el: '#app',

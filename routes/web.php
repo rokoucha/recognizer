@@ -26,8 +26,13 @@ Route::get('/locale/{key}', function ($language) {
     );
 })->name('locale');
 
-Route::prefix('api/attachments')->group(function () {
-    Route::post('/', 'AttachmentsController@store');
-    Route::get('/{id}', 'AttachmentsController@show');
-    Route::delete('/{id}', 'AttachmentsController@destroy');
+Route::prefix('api')->group(function () {
+    Route::prefix('attachments')->group(function () {
+        Route::post('/', 'AttachmentsController@store');
+        Route::get('/{id}', 'AttachmentsController@show');
+        Route::delete('/{id}', 'AttachmentsController@destroy');
+    });
+    Route::prefix('checklists')->group(function () {
+        Route::get('/', 'Api\ChecklistsController@index');
+    });
 });
