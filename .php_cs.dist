@@ -1,12 +1,17 @@
 <?php
 
-return PhpCsFixer\Config::create()
-    ->setFinder(PhpCsFixer\Finder::create()
-        ->exclude([
-            'bootstrap/cache',
-            'storage',
-            'vendor',
-        ])
-        ->in(__DIR__)
-    )
-    ;
+namespace PhpCsFixer;
+
+return Config::create()
+    ->setRules([
+        'single_import_per_statement' => false,
+    ])
+    ->setFinder(
+        Finder::create()
+            ->exclude([
+                'bootstrap/cache',
+                'storage',
+                'vendor',
+            ])
+            ->in(__DIR__)
+    );
