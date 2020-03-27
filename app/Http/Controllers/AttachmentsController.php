@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Attachment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\{Auth, Storage};
+use Illuminate\Support\Facades\Storage;
 
 class AttachmentsController extends Controller
 {
