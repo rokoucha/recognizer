@@ -2,10 +2,8 @@
 
 namespace App\Providers;
 
-use App\Attachment;
-use App\Checklist;
-use App\Policies\AttachmentPolicy;
-use App\Policies\ChecklistPolicy;
+use App\{Attachment, Checklist};
+use App\Policies\{AttachmentPolicy, ChecklistPolicy};
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider

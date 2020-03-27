@@ -2,8 +2,7 @@
 
 namespace App\Policies;
 
-use App\Checklist;
-use App\User;
+use App\{Checklist, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ChecklistPolicy
