@@ -19,7 +19,10 @@
                     </div>
                     <div class="flex justify-center my-auto">
                         @auth
-                        <Incremental-Search-Box></Incremental-Search-Box>
+                        <Incremental-Search-Box
+                            next-Text="{{ __('pagination.next') }}"
+                            previous-Text="{{ __('pagination.previous') }}"
+                        ></Incremental-Search-Box>
                         @endauth
                     </div>
                     <div class="flex justify-center px-2">
